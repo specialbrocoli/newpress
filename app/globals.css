@@ -30,9 +30,7 @@ h6 {
 
 .embla__slide {
   min-width: 0;
-  height: auto;
   margin-inline: 5px;
-  aspect-ratio: 899/533;
   width: min(899px, 100%);
   flex: 0 0 min(899px, 100%);
 }
