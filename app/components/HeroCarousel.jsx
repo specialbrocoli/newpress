@@ -61,7 +61,7 @@ export default function HeroCarousel() {
       <Link
         href={`/`}
         key={_id}
-        className='embla__slide rounded-2xl overflow-hidden bg-black text-white text-center content-center relative'
+        className='embla__slide text-white h-[400px] md:h-auto md:aspect-[899/533] rounded-2xl overflow-hidden bg-black relative block'
       >
         <Image
           src={imageUrl}
@@ -71,10 +71,11 @@ export default function HeroCarousel() {
           className='object-cover'
         />
 
+        {/* carousel overlay */}
         <div className='absolute inset-0 bg-black/30 z-10'></div>
 
-        <div className='absolute inset-0 z-20 flex flex-col justify-end p-6 gap-8 '>
-          {/* carousel header */}
+        {/* carousel body */}
+        <div className='absolute inset-0 z-20 flex flex-col justify-end p-6 gap-3 lg:gap-4 '>
           <div className='flex items-center'>
             <Pill className='bg-yellow'>{category}</Pill>
 
@@ -90,31 +91,31 @@ export default function HeroCarousel() {
             </span>
           </div>
 
-          <h1 className='text-left font-bold text-3xl max-w-[28ch]'>{title}</h1>
+          <h1 className='text-left text-lg font-semibold md:font-bold lg:text-3xl max-w-[28ch]'>
+            {title}
+          </h1>
 
           {/* carousel footer */}
-          <div>
-            <ul className='flex gap-4'>
-              <li>
-                <span className='flex items-center gap-2'>
-                  <CiUser />
-                  {author}
-                </span>
-              </li>
-              <li>
-                <span className='flex items-center gap-2'>
-                  <CiClock2 />
-                  {date}
-                </span>
-              </li>
-              <li>
-                <span className='flex items-center gap-2'>
-                  <CiChat1 />
-                  {comments}
-                </span>
-              </li>
-            </ul>
-          </div>
+          <ul className='flex flex-wrap gap-4'>
+            <li>
+              <span className='flex items-center gap-2 font-light'>
+                <CiUser />
+                {author}
+              </span>
+            </li>
+            <li>
+              <span className='flex items-center gap-2 font-light'>
+                <CiClock2 />
+                {date}
+              </span>
+            </li>
+            <li>
+              <span className='flex items-center gap-2 font-light'>
+                <CiChat1 />
+                {comments}
+              </span>
+            </li>
+          </ul>
         </div>
       </Link>
     );
