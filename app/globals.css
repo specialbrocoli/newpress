@@ -1,8 +1,10 @@
 @import 'tailwindcss';
 
 @theme {
+  --color-red: #dc3545;
   --color-hotpink: #c5015f;
   --color-funblue: #2144a0;
+  --color-yellow: #ff9900;
 
   --font-poppins: var(--font-poppins);
 }
