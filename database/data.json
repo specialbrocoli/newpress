@@ -1,0 +1,56 @@
+[
+  {
+    "category": "Technology",
+    "imageUrl": "/nvidia.jpg",
+    "trending": true,
+    "author": "specialbrocoli",
+    "title": "Nvidia's AI empire: A look at its top startup investments",
+    "comments": 200,
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum veniam sed perspiciatis? Accusantium eum sunt consectetur esse necessitatibus corporis minus? Lorem ipsum dolor sit amet."
+  },
+  {
+    "category": "Lifestyle",
+    "imageUrl": "/lf-2.jpg",
+    "trending": false,
+    "author": "sexwale",
+    "title": "Lifestyle blog that aims to inspire and encourage women of all backgrounds",
+    "comments": 100,
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum veniam sed perspiciatis? Accusantium eum sunt consectetur esse necessitatibus corporis minus? Lorem ipsum dolor sit amet."
+  },
+  {
+    "category": "Travel",
+    "imageUrl": "/tr-9.png",
+    "trending": true,
+    "author": "Thabiso",
+    "title": "Why Victoria Falls Is the Ultimate Destination for Your Next Corporate Event",
+    "comments": 250,
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum veniam sed perspiciatis? Accusantium eum sunt consectetur esse necessitatibus corporis minus? Lorem ipsum dolor sit amet."
+  },
+  {
+    "category": "Education",
+    "imageUrl": "/mastercard.jpg",
+    "trending": true,
+    "author": "sean mavhima",
+    "title": "Young Girls Can Lead",
+    "comments": 160,
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum veniam sed perspiciatis? Accusantium eum sunt consectetur esse necessitatibus corporis minus? Lorem ipsum dolor sit amet."
+  },
+  {
+    "category": "Fashion",
+    "imageUrl": "/tr-9.png",
+    "trending": true,
+    "author": "Helen Dube",
+    "title": "My take on the Jenni Kayne Cashmere Cocoon Cardigan",
+    "comments": 80,
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum veniam sed perspiciatis? Accusantium eum sunt consectetur esse necessitatibus corporis minus? Lorem ipsum dolor sit amet."
+  },
+  {
+    "category": "Fashion",
+    "imageUrl": "/dunhill.webp",
+    "trending": true,
+    "author": "blackstreet",
+    "title": "Dunhill’s Dubai Debut",
+    "comments": 180,
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum veniam sed perspiciatis? Accusantium eum sunt consectetur esse necessitatibus corporis minus? Lorem ipsum dolor sit amet."
+  }
+]

@@ -1,23 +1,37 @@
-import Post from '@/models/post';
+import Post from '@/models/Post';
 
 // controller
 
-// GET: http://localhost:3000/api/post/ || http://localhost:3000/api/post/:id
+// GET: http://localhost:3000/api/post/
 export async function getPosts(req, res) {
+  const { limit, featured } = req.query;
+  let query = {};
+
   try {
-    const { id } = req.query;
-
-    if (id) {
-      const post = await Post.findById(id);
-      if (!post) return res.status(404).json({ error: 'Post Not Found!' });
-      return res.status(200).json(post);
-    }
-
-    const posts = await Post.find();
-    if (!posts) return res.status(404).json({ error: 'Data Not Found!' });
-    res.status(200).json(posts);
+    if (featured === 'true') query.featured = true;
+    let posts = Post.find(query);
+    if (limit) posts = posts.limit(parseInt(limit));
+    const result = await posts;
+    if (!result) return res.status(404).json({ error: 'Data Not Found!' });
+    res.status(200).json(result);
   } catch (error) {
     res.status(404).json('Error While Fetching Data!');
+  }
+}
+
+// GET: http://localhost:3000/api/post/:postId
+export async function getPost(req, res) {
+  try {
+    const { postId } = req.query;
+
+    if (postId) {
+      const post = await Post.findById(postId);
+      return res.status(200).json(post);
+    } else {
+      return res.status(404).json({ error: 'Post Not Found!' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Error Fetching User!' });
   }
 }
 
@@ -57,14 +71,14 @@ export async function putPost(req, res) {
 // DELETE: http://localhost:3000/api/post/:id
 export async function deletePost(req, res) {
   try {
-    const { id } = req.query;
+    const { postId } = req.query;
 
-    if (id) {
-      await Post.findByIdAndDelete(id);
-      return res.status(200).json({ deleted: id });
+    if (postId) {
+      await Post.findByIdAndDelete(postId);
+      return res.status(200).json({ deleted: postId });
     }
 
-    if (!id) return res.status(404).json({ error: 'Post Not Found!' });
+    if (!postId) return res.status(404).json({ error: 'Post Not Found!' });
   } catch (error) {
     res.status(404).json({ error: 'Error Deleting User!' });
   }
