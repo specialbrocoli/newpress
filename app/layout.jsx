@@ -1,4 +1,4 @@
-import Footer from './components/Footer';
+ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import './globals.css';
 import { Poppins, Roboto } from 'next/font/google';
@@ -24,9 +24,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={`${poppins.variable} ${roboto.className}`}>
+      <body
+        className={`flex flex-col min-h-screen ${poppins.variable} ${roboto.className}`}
+      >
         <Navbar />
-        <main className='flex h-[100dvh]'>{children}</main>
+        <main className='flex-1'>{children}</main>
         <Footer />
       </body>
     </html>
