@@ -122,7 +122,11 @@ export default function HeroCarousel() {
   });
 
   if (loading)
-    return <h1 className='text-2xl font-medium text-center'>loading...</h1>;
+    return (
+      <h1 className='font-light text-left text-xl ml-8  capitalize'>
+        loading...
+      </h1>
+    );
 
   return (
     <div className='embla' ref={emblaRef}>
