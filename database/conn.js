@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 export default async function connectMongo() {
-  const uri = process.env.MONGODB_URI || process.env.MONGO_URI;
+  const uri = process.env.MONGO_LOCAL || process.env.MONGO_REMOTE;
 
   try {
     const { connection } = await mongoose.connect(uri);
