@@ -1,18 +1,30 @@
-export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic';
 
 import HeroCarousel from './components/HeroCarousel';
-import Seaction from './components/Seaction';
-import { fetchPosts, fetFeaturedPosts } from '@/lib/helper';
+import PostsGrid from './components/PostsGrid';
+import { Section } from './components/Section';
+import { fetchFeaturedPosts, fetchTopStories } from '@/lib/helper';
 
-export default async function HomePage(req, res) {
-  const featuredPosts = await fetFeaturedPosts()
+export default async function HomePage() {
+  const featuredPosts = await fetchFeaturedPosts();
+  const topStories = await fetchTopStories();
   return (
     <>
-      <section className='flex-1'>
-        <HeroCarousel />
-      </section>
+      {/* hero carousel */}
+      <HeroCarousel />
 
-      <Seaction className='mt-18' title={'Featured Posts'} posts={featuredPosts}></Seaction>
+      {/* featured posts */}
+      <Section title={'Featured Posts'} link={'See All Posts'}>
+        <PostsGrid posts={featuredPosts || []}></PostsGrid>
+      </Section>
+
+      {/* top stories */}
+      <Section title={'Top Stories'} link={'See All Posts'}></Section>
+
+      {/* editor's choice */}
+      <Section title={'Editor Choice'} link={'See All Posts'}>
+        <PostsGrid posts={featuredPosts || []}></PostsGrid>
+      </Section>
     </>
   );
 }
