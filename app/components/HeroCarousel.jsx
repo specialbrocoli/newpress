@@ -18,6 +18,7 @@ import { CiClock2 } from 'react-icons/ci';
 
 // component import
 import Pill from '@/app/components/Pill';
+import IconText from '@/app/components/IconText';
 
 export default function HeroCarousel() {
   const [posts, setPosts] = useState([]);
@@ -95,27 +96,13 @@ export default function HeroCarousel() {
             {title}
           </h1>
 
-          {/* carousel footer */}
-          <ul className='flex flex-wrap gap-4'>
-            <li>
-              <span className='flex items-center gap-2 font-light'>
-                <CiUser />
-                {author}
-              </span>
-            </li>
-            <li>
-              <span className='flex items-center gap-2 font-light'>
-                <CiClock2 />
-                {date}
-              </span>
-            </li>
-            <li>
-              <span className='flex items-center gap-2 font-light'>
-                <CiChat1 />
-                {comments}
-              </span>
-            </li>
-          </ul>
+          <IconText
+            items={[
+              { icon: CiUser, text: author },
+              { icon: CiClock2, text: date },
+              { icon: CiChat1, text: comments },
+            ]}
+          />
         </div>
       </Link>
     );
