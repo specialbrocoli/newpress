@@ -6,7 +6,7 @@ export function Section({ title, link, path = '/', children, className = '' }) {
     <section
       className={`container mx-auto px-2 md:px-20 py-8 mt-18 ${className}`}
     >
-      <div className='flex items-center justify-between mb-6'>
+      <div className='flex items-center justify-between mb-18'>
         <h1 className='text-3xl lg:text-4xl text-left font-black'>{title}</h1>
         <Link
           className='hidden md:block md:uppercase md:underline md:underline-offset-4'

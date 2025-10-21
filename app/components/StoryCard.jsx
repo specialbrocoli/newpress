@@ -11,7 +11,7 @@ import IconText from '@/app/components/IconText';
 import { CiUser } from 'react-icons/ci';
 import { CiClock2 } from 'react-icons/ci';
 
-export default function StoryCard({ post }) {
+export default function StoryCard({ post, children, className = '' }) {
   const { createdAt, imageUrl, category, title, author } = post;
   const date = new Date(createdAt).toLocaleDateString('en-GB', {
     day: 'numeric',
@@ -20,9 +20,16 @@ export default function StoryCard({ post }) {
   });
 
   return (
-    <div className='w-full sm:max-w-[440px] mx-auto h-[390px] relative rounded-md overflow-hidden shadow-lg'>
+    <div
+      className={`w-full h-[390px] relative rounded-md overflow-hidden shadow-lg ${className}`}
+    >
       <Pill className='absolute top-2 left-2 z-10 bg-green'>{category}</Pill>
-      <Image src={imageUrl} alt={'temporary'} fill></Image>
+      <Image
+        src={imageUrl}
+        alt={'temporary'}
+        fill
+        className='object-cover'
+      ></Image>
       <div className='absolute inset-0 bg-black/40'></div>
 
       <div className='text-left p-4 space-y-3 absolute bottom-0 left-0 z-10 w-full text-white'>

@@ -17,7 +17,7 @@ export default function Story2Card({ post, className = '' }) {
   const date = dateFormatter(createdAt);
   return (
     <div
-      className={`flex flex-col sm:max-w-[440px] md:flex-row md:items-center md:justify-between gap-4 w-full text-left bg-white rounded-md overflow-hidden shadow-md p-4 ${className}`}
+      className={`flex flex-col md:flex-row md:items-center gap-4 w-full text-left bg-white rounded-md overflow-hidden shadow-md p-4 ${className}`}
     >
       <div className='relative w-full h-40 md:w-24 md:h-24 flex-shrink-0'>
         <Image
