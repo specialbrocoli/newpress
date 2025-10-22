@@ -23,7 +23,7 @@ export default function StoryCard({ post, children, className = '' }) {
     <div
       className={`w-full h-[390px] relative rounded-md overflow-hidden shadow-lg ${className}`}
     >
-      <Pill className='absolute top-2 left-2 z-10 bg-green'>{category}</Pill>
+      <Pill className='absolute top-2 left-2 z-10 bg-green text-white'>{category}</Pill>
       <Image
         src={imageUrl}
         alt={'temporary'}

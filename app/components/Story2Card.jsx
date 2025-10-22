@@ -28,7 +28,7 @@ export default function Story2Card({ post, className = '' }) {
         ></Image>
       </div>
       <div>
-        <h1 className='text-base md:font-medium'>{title}</h1>
+        <h1 className='text-xs md:font-medium'>{title}</h1>
         <IconText color='#dc3545' items={[{ icon: CiClock2, text: date }]} />
       </div>
     </div>
